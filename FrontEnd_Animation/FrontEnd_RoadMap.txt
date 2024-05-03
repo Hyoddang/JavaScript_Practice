@@ -1,0 +1,24 @@
+1. HTML / CSS / JS
+   20%    20%   60%
+- TodoList
+- Calculator
+- Calendar
+- Question
+
+2. JavaScript 더 배우기
+- ES6 문법 익숙해지기
+- async / await 익숙해지기
+- map, reduce, filter 익숙해지기
+
+3. Framework || Livrary 배우기
+- React.js, Svelte.js(호기심)
+- Next.js 금지
+- 상태관리 배우기 금지 (Redux vs Mobx)
+
+4. RESTful API
+- fetch 배우기, axios 배우기
+- GraphQL 금지
+
+5. 프로젝트 만들기
+- 주식 시세 받아와서 표시하기(yahoo finance)
+- 날씨 앱 만들기

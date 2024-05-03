@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.image-wrap {
+  width: auto;
+  height: auto;
+  transition: transform 0.5s;
+}
+
+.image-container {
+  width: auto;
+  float: left;
+}
+
+img {
+  width: 1000px;
+  height: 500px;
+}
