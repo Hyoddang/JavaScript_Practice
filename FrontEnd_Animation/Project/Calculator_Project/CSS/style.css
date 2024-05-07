@@ -1,0 +1,15 @@
+body {
+  background-color: #3d3d3d;
+}
+
+.calculator {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 65px);
+  grid-auto-rows: 65px;
+  grid-gap: 5px;
+}
+
+.operator {
+  background-color: #3fffff;
+}
