@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Project</title>
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  
+  <form name="calculator">
+    <div class="calculator">
+      <input type="text" name="output" readonly class="inputNum">
+      <input type="button" value="C" class="clear" onclick="document.calculator.output.value = ''">
+      <input type="button" value="/" class="operator" document.calculator.output.value+='/'>
+      <input type="button" value="1" onclick="document.calculator.output.value+='1'">
+      <input type="button" value="2" onclick="document.calculator.output.value+='2'">
+      <input type="button" value="3" onclick="document.calculator.output.value+='3'">
+      <input type="button" value="*" class="operator" onclick="document.calculator.output.value += '*'">
+      <input type="button" value="4" onclick="document.calculator.output.value+='4'">
+      <input type="button" value="5" onclick="document.calculator.output.value+='5'">
+      <input type="button" value="6" onclick="document.calculator.output.value+='6'">
+      <input type="button" value="+" class="operator" onclick="document.calculator.output.value += '+'">
+      <input type="button" value="7" onclick="document.calculator.output.value+='7'">
+      <input type="button" value="8" onclick="document.calculator.output.value+='8'">
+      <input type="button" value="9" onclick="document.calculator.output.value+='9'">
+      <input type="button" value="-" class="operator" onclick="document.calculator.output.value += '-'">
+      <input type="button" value="." class="dot" onclick="document.calculator.output.value += '.'">
+      <input type="button" value="0" onclick="document.calculator.output.value+='0'">
+      <input type="button" value="=" class="operator result" onclick="document.calculator.output.value=eval(document.calculator.output.value)">
+    </div>
+  </form>
+
+</body>
+</html>
