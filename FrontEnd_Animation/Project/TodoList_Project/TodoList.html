@@ -3,9 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/1ccb0a2168.js" crossorigin="anonymous"></script>
   <title>TodoList Project</title>
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  
+  <div class="todo-wrap">
+    <header class="todo-header">
+      <h1>Todo</h1>
+      <div class="todo-input-wrap">
+        <input type="text" placeholder="Enter ur Todo-list" class="todo-input"><button><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </header>
+    <main class="todo-main">
+      <div class="content-wrap">
+        <ul class="todo-list">
+          <li>Todo List 1 <button><i class="fa-solid fa-pencil"></i></button>
+          <button><i class="fa-solid fa-xmark"></i></button></li>
+        </ul>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

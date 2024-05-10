@@ -1,0 +1,35 @@
+body {
+  background-color: #eeeeee;
+}
+
+.todo-wrap {
+  position: relative;
+  width: 700px;
+  height: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  padding: 30px 20px 20px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.todo-input-wrap input {
+  position: relative;
+  height: 100%;
+  width: 350px;
+}
+
+.todo-input button {
+  
+}
+
+.todo-main {
+  padding: 20px;
+}
+
