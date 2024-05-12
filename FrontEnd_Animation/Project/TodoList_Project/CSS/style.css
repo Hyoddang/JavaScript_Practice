@@ -1,14 +1,15 @@
 body {
-  background-color: #eeeeee;
+  position: relative;
+  background-color: rgb(30, 30, 30);
 }
 
 .todo-wrap {
   position: relative;
-  width: 700px;
-  height: 1000px;
-  margin: 50px auto;
+  width: 650px;
+  height: 880px;
+  margin: 30px auto;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #eee;
   border-radius: 3px;
 }
 
@@ -17,11 +18,11 @@ body {
   justify-content: center;
   justify-content: space-around;
   padding: 30px 20px 20px 20px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #eee;
 }
 
 .todo-input-wrap {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #eee;
 }
 
 .todo-input-wrap input {
@@ -33,12 +34,12 @@ body {
   border: none;
 }
 
-::placeholder:default {
-  text-align: center;
+.todo-input {
+  background-color: rgb(30, 30, 30);
 }
 
 .todo-input-wrap button {
-  translate: -50%;
+  translate: -30%;
 }
 
 .fa-plus {
@@ -46,6 +47,49 @@ body {
 }
 
 .todo-main {
-  padding: 20px;
+  position: relative;
+  padding: 20px 20px 0px 20px;
+  height: calc(100% - 94px);
+  overflow-y: auto;
+}
+
+.todo-list {
+  display: grid;
+  grid-template-columns: 185px 185px 185px;
+  grid-template-rows: 185px 185px 185px;
+  grid-gap: 20px;
+}
+
+.content {
+  width: 190px;
+  height: 190px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.content p {
+  width: 100%;
+  height: 88%;
+  border-bottom: 1px solid #eee;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+.content-footer {
+  text-align: end;
+}
+
+.content-footer button {
+  margin-right: 10px;
+}
+
+.fa-pencil {
+  font-size: 14px;
+}
+
+.fa-xmark {
+  font-size: 16px;
 }
 
