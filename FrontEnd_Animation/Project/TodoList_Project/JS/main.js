@@ -27,5 +27,7 @@ function renderTodo() {
 }
 
 let deleteBtn = document.querySelector('.fa-xmark').addEventListener("click", function deleteTodo() {
-  todoArr.forEach(todo, i)
+  todoArr.filter(todo => {
+    
+  })
 })
