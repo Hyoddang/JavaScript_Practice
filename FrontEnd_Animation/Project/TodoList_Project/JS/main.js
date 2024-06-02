@@ -17,7 +17,8 @@ let todoAddBtn = document.querySelector(".fa-plus").addEventListener('click',fun
 
 function renderTodo() {
   let contentDiv = document.querySelector('.todo-list');
-  contentDiv.innerHTML = ''; // 기존 내용을 지워 중복추가를 방지하는 속성
+  // 기존 내용을 지워 중복추가를 방지하는 속성
+  contentDiv.innerHTML = '';
 
   if(!todoValue.value) {
     return;
@@ -37,12 +38,10 @@ function renderTodo() {
   deleteTodo();
 }
 
-document.querySelector("DOMContentLoaded", function () {
+let deleteBtn = document.querySelector(".fa-xmark");
+deleteBtn.addEventListener("click", function deleteTodo() {
+  let todoArr = todoArr.filter((i) => i !== i);
 
-  let deleteBtn = document.querySelector(".fa-xmark");
-  deleteBtn.addEventListener("click", function deleteTodo() {
-    let todoArr = todoArr.filter(i => i !== i);
-
-    renderTodo();
-  });
+  renderTodo();
 });
+
