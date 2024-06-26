@@ -49,7 +49,6 @@ function wiseSayDisplay() {
   const selectWiseSay = wiseSayArr[randomIndex]
   wiseSaying.innerHTML = `${selectWiseSay.say}`
   wisePeople.innerHTML = `- ${selectWiseSay.people} -`
-  console.log(randomIndex)
 }
 
 wiseSayDisplay()

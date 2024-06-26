@@ -12,7 +12,6 @@ function backgroundRandomImage() {
   const arrRandomIndex = Math.floor(Math.random() * backImg.length);
   const selectBackImg = backImg[arrRandomIndex]
   body.style.backgroundImage = `url(${selectBackImg})`
-  console.log(selectBackImg)
 }
 
 backgroundRandomImage();
