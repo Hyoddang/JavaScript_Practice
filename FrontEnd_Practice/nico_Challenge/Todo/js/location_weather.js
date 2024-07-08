@@ -1,7 +1,10 @@
 const API_KEY = '7bcd362d97ee021a35032554daaeff3d'
-const selectFirstWeather = document.querySelector(".select-first-locate");
-const selectSecondWeather = document.querySelector(".select-second-locate");
-const selectThirdWeather = document.querySelector(".select-third-locate");
+// const selectFirstWeather = document.querySelector(".select-first-locate");
+// const selectSecondWeather = document.querySelector(".select-second-locate");
+// const selectThirdWeather = document.querySelector(".select-third-locate");
+
+const weatherIconDiv = document.querySelector(".weather-icon")
+const tempDiv = document.querySelector(".temperature")
 
 const location = {
   seoul: {lat: 37.559722, lon:126.975278},
@@ -16,21 +19,59 @@ const location = {
   paris: {lat: 48.8566, lon: 2.3522}
 }
 
-function localWeather(locationKey) {
+function localWeather(locationKey, element) {
   const location = locations[locationKey];
   if (!location) {
-    console.error('Invalid location key: ', locationKey);
+    console.error("Invalid location key:", locationKey);
     return;
   }
+
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${API_KEY}&units=metric`;
-  
-  const localWeatherTemp = fetch(url)
+
+  fetch(url)
     .then((response) => response.json())
     .then((data) => {
       const temp = data.main.temp;
-    });
+      const weatherIconCode = data.weather[0].icon;
+      const weatherDescription = data.weather[0].description;
 
-    console.log(localWeatherTemp)
+      const iconUrl = `http://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
+
+      document.querySelector(`.${element} .weather-icon`).src = iconUrl;
+      document.querySelector(`.${element} .weather-icon`).alt =
+        weatherDescription;
+      document.querySelector(
+        `.${element} .temperature`
+      ).textContent = `${temp.toFixed(1)} ºC`;
+    })
+    .catch((error) => {
+      console.error("Error fetching weather data:", error);
+    });
 }
+
+function handleSelectChange(event) {
+  const selectedLocation = event.target.value;
+  const element = event.target.closest(".location-one")
+    ? "location-one"
+    : event.target.closest(".location-two")
+    ? "location-two"
+    : event.target.closest(".location-three")
+    ? "location-three"
+    : "";
+
+  if (element) {
+    localWeather(selectedLocation, element);
+  }
+}
+
+document.querySelectorAll(".select-locate").forEach((selectElement) => {
+  selectElement.addEventListener("change", handleSelectChange);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".select-locate").forEach((selectElement) => {
+    handleSelectChange({ target: selectElement });
+  });
+});
 
 localWeather()
