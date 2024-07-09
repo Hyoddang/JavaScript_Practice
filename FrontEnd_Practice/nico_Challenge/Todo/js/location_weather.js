@@ -6,8 +6,8 @@ const API_KEY = '7bcd362d97ee021a35032554daaeff3d'
 const weatherIconDiv = document.querySelector(".weather-icon")
 const tempDiv = document.querySelector(".temperature")
 
-const location = {
-  seoul: {lat: 37.559722, lon:126.975278},
+const locations = {
+  seoul: {lat: 37.559722, lon: 126.975278},
   NY: {lat: 40.7128, lon: -74.0060},
   tokyo: {lat: 35.682839, lon: 139.759455},
   london: {lat: 51.5074, lon: -0.1278},
@@ -38,11 +38,8 @@ function localWeather(locationKey, element) {
       const iconUrl = `http://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
 
       document.querySelector(`.${element} .weather-icon`).src = iconUrl;
-      document.querySelector(`.${element} .weather-icon`).alt =
-        weatherDescription;
-      document.querySelector(
-        `.${element} .temperature`
-      ).textContent = `${temp.toFixed(1)} ºC`;
+      document.querySelector(`.${element} .weather-icon`).alt = weatherDescription;
+      document.querySelector(`.${element} .temperature`).textContent = `${temp.toFixed(1)} ºC`;
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
@@ -73,5 +70,3 @@ document.addEventListener("DOMContentLoaded", () => {
     handleSelectChange({ target: selectElement });
   });
 });
-
-localWeather()
