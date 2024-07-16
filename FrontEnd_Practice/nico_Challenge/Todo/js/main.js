@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     todoWrap.innerHTML += `<li class="todo" id="${newTodo.id}">
       <input type="checkbox" class="todo-check" ${newTodo.checked ? "checked" : ""}>
       <span class="todo-content ${newTodo.checked ? "todo-hidden" : ""}">${newTodo.text}</span>
+      <button class="todo-modify"><i class="fa-solid fa-pen"></i></button>
       <button class="todo-remove"><i class="fa-regular fa-circle-xmark"></i></button>
     </li>`;
   }
@@ -62,6 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //! Todo 수정 버튼 함수
+  function modifyTodoBtnHandler(e) {
+    if(e.target.classList.contains("fa-pen")) {
+      const modifyTodo = e.target.closest("li");
+      
+    }
+  }
+
   function todoBtnHandler(e) {
     e.preventDefault();
     const newTodo = todoValue.value;
@@ -79,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   todoForm.addEventListener("submit", todoBtnHandler);
   todoWrap.addEventListener("click", removeTodoBtnHandler);
   todoWrap.addEventListener("click", todoCheckEffect)
+  todoWrap.addEventListener("click", modifyTodoBtnHandler);
 
 
   //! localStorage에 저장된 Todo를 불러오는 코드

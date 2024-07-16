@@ -1,10 +1,4 @@
 const API_KEY = '7bcd362d97ee021a35032554daaeff3d'
-// const selectFirstWeather = document.querySelector(".select-first-locate");
-// const selectSecondWeather = document.querySelector(".select-second-locate");
-// const selectThirdWeather = document.querySelector(".select-third-locate");
-
-const weatherIconDiv = document.querySelector(".weather-icon")
-const tempDiv = document.querySelector(".temperature")
 
 const locations = {
   seoul: {lat: 37.559722, lon: 126.975278},

@@ -119,6 +119,18 @@ button {
   margin-top: 2px;
 }
 
+.todo-modify {
+  position: absolute;
+  right: 60px; 
+  top: 50%;
+  transform: translateY(-50%); /* 요소를 수직 중앙에 배치 */
+  margin-top: 2px;
+}
+
+.fa-pen:hover {
+  color: #858585;
+}
+
 .fa-circle-xmark:hover {
   color: #858585;
 }
