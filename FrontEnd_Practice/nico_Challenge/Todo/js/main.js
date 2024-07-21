@@ -65,9 +65,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //! Todo 수정 버튼 함수
   function modifyTodoBtnHandler(e) {
-    if(e.target.classList.contains("fa-pen")) {
+    // 수정 버튼이 클릭되었는지 확인
+    if (e.target.classList.contains("fa-pen")) {
+      // 클릭된 버튼의 가장 가까운 li 요소를 찾음
       const modifyTodo = e.target.closest("li");
-      
+      const todoId = parseInt(modifyTodo.id); // li 요소의 id를 정수로 변환
+      const todo = todos.find(todo => todo.id === todoId); // 해당 id를 가진 할 일 객체를 찾음
+      const todoCheck = document.querySelector(".todo-check");
+  
+      if (todo) {
+        const todoContent = modifyTodo.querySelector(".todo-content"); // li 요소 내의 span 요소를 찾음
+        const input = document.createElement("input"); // 새로운 input 요소를 생성
+        input.type = "text"; // input 타입을 텍스트로 설정
+        input.value = todo.text; // input 요소의 값을 현재 할 일 텍스트로 설정
+        input.classList.add("modify-input"); // input 요소에 클래스 추가
+  
+        // span 요소를 input 요소로 교체
+        todoContent.replaceWith(input);
+        todoCheck.classList.add("display-none");
+  
+        // input 요소에서 포커스를 잃었을 때 이벤트 처리
+        input.addEventListener("blur", function () {
+          const newText = input.value.trim(); // input 요소의 값을 가져와서 공백 제거
+          if (newText !== "") { // 새로운 텍스트가 비어 있지 않으면
+            todo.text = newText; // 할 일 객체의 텍스트를 새로운 텍스트로 변경
+            todoContent.textContent = newText; // span 요소의 텍스트를 새로운 텍스트로 변경
+            saveTodos(); // 변경된 할 일 목록을 저장
+          }
+          input.replaceWith(todoContent); // input 요소를 다시 span 요소로 교체
+          todoCheck.classList.remove("display-none");
+        });
+  
+        // input 요소에서 키다운 이벤트 처리
+        input.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") { // Enter 키를 누르면
+            input.blur(); // input 요소에서 포커스를 제거
+          }
+        });
+  
+        input.focus(); // input 요소에 포커스를 설정하여 즉시 편집할 수 있게 함
+      }
     }
   }
 

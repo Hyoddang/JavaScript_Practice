@@ -127,6 +127,16 @@ button {
   margin-top: 2px;
 }
 
+.modify-input {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  outline: none;
+  border: none;
+  height: 26px;
+  margin-top: 3px;
+  margin-left: 60px;
+}
+
 .fa-pen:hover {
   color: #858585;
 }
@@ -237,4 +247,8 @@ footer {
   justify-content: center;
   text-align: center;
   margin-top: 20px;
+}
+
+.display-none {
+  display: none;
 }
